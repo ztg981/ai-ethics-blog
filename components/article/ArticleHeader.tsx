@@ -71,7 +71,7 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
           src={article.heroImage.src}
           alt={article.heroImage.alt}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 65vw, 800px"
           priority
         />

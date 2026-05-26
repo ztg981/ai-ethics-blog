@@ -3,6 +3,8 @@ import { slugify } from "@/lib/toc";
 import Callout from "./Callout";
 import Figure from "./Figure";
 import PullQuote from "./PullQuote";
+import ProteinLevelsFigure from "./ProteinLevelsFigure";
+import ProteinFoldWidget from "./ProteinFoldWidget";
 
 /**
  * Custom MDX components map.
@@ -33,5 +35,7 @@ export function getMDXComponents(): MDXComponents {
     Callout,
     Figure,
     PullQuote,
+    ProteinLevelsFigure,
+    ProteinFoldWidget,
   };
 }

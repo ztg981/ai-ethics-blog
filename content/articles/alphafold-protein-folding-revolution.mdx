@@ -1,7 +1,7 @@
 ---
 slug: alphafold-protein-folding-revolution
-title: "AlphaFold and the Protein Folding Revolution"
-subtitle: "How a deep learning system solved a 50-year-old grand challenge in biology — and what it means for science, medicine, and biosecurity"
+title: "How AlphaFold Solved Biology's 50-Year Puzzle"
+subtitle: "How a deep learning system solved a 50-year-old grand challenge in biology and what it means for science, medicine, and AI ethics"
 author:
   id: author-1
   name: "Author Name"
@@ -12,132 +12,109 @@ author:
     twitter: ""
     linkedin: ""
     website: ""
-publishedAt: "2024-03-15"
+publishedAt: "2026-05-26"
 category: ai-research
 tags:
   - AlphaFold
   - DeepMind
   - protein folding
   - structural biology
-  - biosecurity
+  - AI ethics
   - drug discovery
 featured: true
 heroImage:
-  src: "/images/articles/alphafold-hero.jpg"
-  alt: "Abstract visualization of a protein structure rendered in blue and white"
-  width: 1200
-  height: 675
-  credit: ""
-excerpt: "As computational models begin to predict protein structures with molecular precision, the boundary between digital code and biological life begins to blur. We examine AlphaFold's scientific foundations, its impact five years on, and the biosecurity questions it leaves unanswered."
+  src: "https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png"
+  alt: "A clean, colorful 3D ribbon diagram of a folded protein"
+  width: 1159
+  height: 1173
+  credit: "AzaToth, public domain, via Wikimedia Commons"
+excerpt: "Until 2020, scientists faced a major bottleneck in advancing biological research. Scientists could not accurately and quickly model a protein's 3D shape from its amino acid sequence, which slowed research into diseases, biology, and drugs."
 status: published
 ---
 
-## Introduction / TLDR
+## In this blog (tldr)
 
-*[Your introduction will go here. This is placeholder text for development.]*
+Until 2020, scientists faced a major bottleneck in advancing biological research. Proteins are the building blocks of virtually every biological process. Every major disease, like cancer, Alzheimer's, and diabetes, comes from proteins behaving incorrectly due to damaged structure. Shape is everything for a protein; it is what determines its function and role. However, given a protein's amino acid sequence, scientists could not accurately and quickly model its 3D shape. So when scientists couldn't accurately model proteins, it meant they couldn't fully understand the disease, biological process, or drug that they were studying. Solving this problem had the potential to let parts of scientific research completely take off, allowing our understanding of proteins to advance at a much faster rate.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<Figure
+  src="https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png"
+  alt="A clean, colorful 3D ribbon diagram of a folded protein"
+  caption="A clean, colorful 3D ribbon diagram of a folded protein."
+  credit="AzaToth, public domain, via Wikimedia Commons"
+  width={1159}
+  height={1173}
+/>
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+## The biology behind how proteins work:
 
-## The Biology Behind How Proteins Work
+At the basic level, proteins are long chains of amino acids (monomers) bonded together by peptide bonds to form long polypeptides (the polymer). These chains of amino acids then fold together into complex 3D shapes. This is where the protein's secondary, tertiary, and quaternary structure comes into play.
 
-*[Your section on protein biology will go here.]*
+First the polypeptide backbone folds into repetitive patterns, creating α-helices and β-pleated sheets. Its secondary structure refers to this local folding of the chain, held together by hydrogen bonds.
 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+Then, there is the overall 3D shape of the entire polypeptide chain, which is its tertiary structure. This is caused by interactions between the amino acid side chains, which includes hydrophobic interactions, disulfide bonds, and van der Waals forces.
 
-### Amino Acid Chains and 3D Structure
+Some proteins are also made of two or more polypeptide chains. This gives them a quaternary structure, where multiple polypeptide chains come together, creating a multi subunit complex.
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+<ProteinLevelsFigure />
 
-### Why Shape Determines Function
+A protein's shape is its most important property because it controls what the protein can bind to, how it interacts with other molecules and what jobs it performs for the cell. For example, enzymes are a specific type of protein, and they work by having a specific binding site for substrates. If the enzyme's shape changes, it will not be able to correctly bind with the substrate, and the enzyme will be unable to complete its biological job.
 
-Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+## The physics behind how proteins fold:
 
-## The Physics Behind How Proteins Fold
+Protein folding is not random like it may sound. It folds because of the different bonding involved, and because different parts of the amino acid chain are attracted to or repelled by each other and by the water around them.
 
-*[Your section on protein folding physics will go here.]*
+The properties of water play a big part here, because some amino acid side chains are hydrophobic, which means that these parts do not like water and need to avoid it. As a result, similar to the phospholipid membrane (which has hydrophilic heads on the outside and hydrophobic tails on the inside), the side chains that are hydrophobic tend to move toward the inside of the protein, where they won't be interacting with the watery environment of the cell. On the other hand, the hydrophilic side chains interact well with the watery environment, so they usually stay on the exterior of the protein.
 
-Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+In addition, other chemical forces also move the chain into its final shape. These forces include the disulfide bridges and van der Waals interactions mentioned earlier, as well as ionic bonds, which form between positively and negatively charged side chains.
 
-### Anfinsen's Dogma and the Thermodynamic Hypothesis
+The goal of the folding is to get the protein to a final, stable shape. This final folded protein usually has a lower energy structure, making it more stable than the unfolded version of it. That's the main reason why although a protein chain technically has a huge number of possible shapes it could fold into, the protein won't fold into these shapes because they are not good for the protein, which wants a stable shape.
 
-Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus.
+As a result, it is possible to accurately predict how a protein is going to end up looking after it folds. However, even though we know the basic properties of folding, we still didn't have a tool that could take all the countless different folding possibilities, and be able to accurately predict the result.
 
-### Levinthal's Paradox
+## Introduction to AlphaFold:
 
-Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+<ProteinFoldWidget />
 
-### Fifty Years of Failed Computational Attempts
+## How AlphaFold comes into play + how it works
 
-Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+Here's where AlphaFold finally comes into play. AlphaFold is essentially an AI system developed by DeepMind that, in just a couple of hours, can predict a protein's folding via just the amino acid sequence. At its core, AlphaFold is a deep learning system, similar to Large Language Models like ChatGPT, except instead of being trained to predict the next word in a sentence, AlphaFold was trained to predict the 3D structure of the protein from its amino acid sequence.
 
-## How AlphaFold Works
+Before AlphaFold, scientists had to use tedious methods to map out protein structure, such as X-ray crystallography, cryo-electron microscopy, and NMR spectroscopy. Although these methods were actually relatively precise and still remain relevant, they required significant resources, time, and effort. AlphaFold makes the process much easier and faster, cutting what once took months in a lab down to just a few hours. This allowed for experiments to be conducted and initialized at a much greater scale, letting researchers be able to study more proteins that previously had no known structure.
 
-*[Your section on AlphaFold's architecture will go here.]*
+AlphaFold works not by simulating a protein fold step by step. It is trained with a dataset of many proteins whose structures we already know, then it uses that data to analyze amino acid sequences and other relations to identify which parts of the protein are going to end up close together, which parts are going to be in the interior of the protein, which parts will be on the outside, etc. It also uses other biological and chemical patterns and constraints, like evolutionary data and physical chemistry to help make the final result as accurate as possible.
 
-Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores.
+While AlphaFold produces a highly accurate result (accuracy is typically above 90%, but varies a lot depending on the protein) in a short time and at a low cost, the system works best when predicting stably folded portions of proteins. Testing proteins that can change shapes and more flexible portions can lead to less accurate results, so other methods as mentioned earlier like X-ray crystallography and cryo-EM are still relevant.
 
-### Multiple Sequence Alignment and Evolutionary Signals
+## Current Impact: Did AlphaFold Live Up to the Hype and Potential?
 
-Alias consequatur aut perferendis doloribus asperiores repellat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+Now that AlphaFold has been released for 5 years, it hasn't led to huge discoveries in scientific research yet, but its effect has definitely been noticed and is improving future research. The significance of the breakthrough was recognized at the highest level: in 2024, AlphaFold's creators Demis Hassabis and John Jumper were awarded the Nobel Prize in Chemistry for protein structure prediction.¹
 
-### The Attention-Based Architecture
+DeepMind and EMBL-EBI (a leading European biology research institute) were able to expand the AlphaFold Protein Structure Database (a publicly available dataset of AlphaFold predicted protein structures) to over 200 million entries, which is already a large portion of the known protein universe.² The database provides open access to these 200 million predicted structures, allowing researchers all around the world to use it. EMBL reported in 2025 that the database had been used by over three million people in more than 190 countries, showing that it has become a global tool for biology.³
 
-Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+<Callout type="insight" title="AlphaFold Database">
+  The AlphaFold Protein Structure Database is a global, open-access resource for predicted protein structures, with more than 200 million entries available to researchers.
+</Callout>
 
-### Confidence Scores and the pLDDT Metric
+Particularly, AlphaFold has been used in research on more neglected diseases, the ones that are hard to research because it requires a lot of expensive and slow structural work. With the help of AlphaFold, research on these diseases became accelerated. One example is Chagas disease, a neglected tropical disease, where researchers used AlphaFold models for the structures of parasitic proteins like the Trypanosoma cruzi proteins. While in the years that AlphaFold has been released, it has not completely revamped scientific research and led to incredible scientific discoveries, it has definitely made scientific research much more accessible.
 
-Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.
+DeepMind continued to extend the same idea, by creating AlphaFold 3, which can not only predict proteins but also how proteins interact with DNA, RNA, and small molecules.⁴ AlphaFold is just one of the first examples of deep learning being applied to solve fundamental scientific problems, and is a preview of what's more to come for AI in reshaping science.
 
-## Current Impact 5–6 Years After Release
+## Impact on Society and AI Ethics
 
-*[Your section on AlphaFold's real-world impact will go here.]*
+When it comes to AI ethics, AlphaFold is an example of a mostly positive use of AI in science and technology, without much ethical concern at all. Instead of keeping the technology private or charging for access, DeepMind released AlphaFold's predictions as a free fully open database, making it available to any researcher in the world. By doing this, AlphaFold managed to bring democratization to a previously complex and expensive process that was mostly only available in wealthy, well funded institutions. By offering accurate structure predictions for free, AlphaFold gave researchers in lower income countries and smaller labs capabilities they couldn't previously afford.
 
-Incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+This connects to a bigger concern in the industry, which is that when research and technologies remain centralized within only well funded and powerful institutions, the direction of research progress becomes shaped by the priorities of these institutions, which often leads to research incentives driven by profit and prestige. The usage of AlphaFold with the Chagas disease is a perfect example of how AlphaFold helped make a difference. Chagas disease is an example of a neglected tropical disease, which affects millions of people worldwide, disproportionately affecting poor and developing countries.⁵ The World Health Organization called this disease a "silenced" disease, because of how it mainly affects poor people who have no political voice or access to healthcare.⁶ With the development of AlphaFold, research on Chagas disease was made more accessible, with the AlphaFold database now containing over 19,000 predicted protein structures for Trypanosoma cruzi, the parasite that causes Chagas, and progress was immediately made on its research, using the database to screen thousands of compounds and identify existing drugs that could be used to treat the disease.⁷
 
-### The Protein Data Bank Before and After
+AlphaFold should serve as a model for future development and usage of AI. AI should help not by acting as an exclusive resource only available to the top tier labs and institutions but rather as a resource that is made available to researchers everywhere and brings more accessibility and equality. As a whole, scientific progress moves faster and in more diverse directions when more people are able to contribute.
 
-Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Ultimately, AlphaFold overcame a long standing problem in biology by creating a method of protein structure prediction that is accurate, fast, and free to use. While it has not yet contributed to any groundbreaking developments in scientific research, it has gradually advanced research across many fields by allowing for research to happen at a greater scale, allowing for increased developments in the future.
 
-### Drug Discovery Pipelines Transformed
+## Sources
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.
-
-### Malaria, Neglected Diseases, and Antivenoms
-
-Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-
-## Did AlphaFold Meet Its Expectations?
-
-*[Your section evaluating whether AlphaFold lived up to the hype will go here.]*
-
-Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.
-
-Ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-
-## Impact on Future Scientific Research and Biosecurity
-
-*[Your section on biosecurity implications and future research will go here.]*
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-
-### Dual-Use Risks: Engineering Novel Pathogens
-
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-
-### The Open-Access Debate
-
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-
-### Current Governance Gaps
-
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate.
-
-## General Impact on Society
-
-*[Your closing section on broader societal implications will go here.]*
-
-Velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-
-Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+1. The Nobel Prize in Chemistry 2024 — NobelPrize.org (Hassabis & Jumper, "for protein structure prediction")
+2. "AlphaFold reveals the structure of the protein universe" — Google DeepMind Blog: https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/
+3. "EMBL-EBI and Google DeepMind renew partnership and release update to AlphaFold Database" — EMBL (2025): https://www.embl.org/news/science-technology/google-deepmind-partnership-renewal/
+4. "AlphaFold 3 predicts the structure and interactions of all of life's molecules" — Google DeepMind (8 May 2024): https://blog.google/technology/ai/google-deepmind-isomorphic-alphafold-3-ai-model/
+5. Sangenito, L.S., et al. (2020). "Funding for Chagas Disease: A 10-Year (2009–2018) Survey." Tropical Medicine and Infectious Disease: https://www.mdpi.com/2414-6366/5/2/88
+6. "World Chagas Disease Day highlights 'silent and silenced' tropical illness" — UN News (2020): https://news.un.org/en/story/2020/04/1061672
+7. Ros-Lucas, A., et al. (2022). "The Use of AlphaFold for In Silico Exploration of Drug Targets in the Parasite Trypanosoma cruzi." Frontiers in Cellular and Infection Microbiology: https://www.frontiersin.org/articles/10.3389/fcimb.2022.944748/full

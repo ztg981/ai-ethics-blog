@@ -9,12 +9,14 @@
 .prose-blog h4 {
   font-family: var(--font-playfair), Georgia, serif;
   scroll-margin-top: 5rem; /* Offset for sticky navbar */
+  text-wrap: balance;
 }
 
 /* First paragraph lead style */
 .prose-blog > p:first-of-type {
   font-size: 1.125rem;
   color: #374151;
+  line-height: 1.85;
 }
 
 /* Smooth scroll target padding for anchored headings */
@@ -50,4 +52,31 @@
 /* Italic em emphasis in serif */
 .prose-blog em {
   font-family: var(--font-playfair), Georgia, serif;
+}
+
+.prose-blog p {
+  text-wrap: pretty;
+}
+
+.prose-blog sup {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+.prose-blog li {
+  padding-left: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .prose-blog {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .prose-blog h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-top: 2.25rem;
+  }
 }

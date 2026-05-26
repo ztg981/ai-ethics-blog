@@ -19,12 +19,16 @@ export default function Figure({
 }: FigureProps) {
   return (
     <figure className="my-10 not-prose">
-      <div className="relative overflow-hidden bg-surface" style={{ aspectRatio: `${width}/${height}` }}>
+      <div
+        className="relative overflow-hidden bg-surface"
+        style={{ aspectRatio: `${width}/${height}` }}
+      >
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-cover"
+          unoptimized
+          className="object-contain"
           sizes="(max-width: 768px) 100vw, 700px"
         />
       </div>
