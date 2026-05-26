@@ -4,7 +4,7 @@ import PageWrapper from "@/components/layout/PageWrapper";
 
 export const metadata: Metadata = {
   title: "You're subscribed",
-  description: "Thanks for subscribing to The Weekly Abstract.",
+  description: "Thanks for subscribing.",
 };
 
 export default function NewsletterConfirmPage() {
@@ -17,8 +17,7 @@ export default function NewsletterConfirmPage() {
         You&apos;re subscribed.
       </h1>
       <p className="font-sans text-body-lg text-muted mb-10 max-w-sm mx-auto">
-        Thanks for signing up for The Weekly Abstract. You&apos;ll receive concise
-        summaries of the week&apos;s most critical biological breakthroughs.
+        Thanks for signing up.
       </p>
       <Link
         href="/"

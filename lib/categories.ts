@@ -2,37 +2,10 @@ import type { Category, CategorySlug } from "@/types/category";
 
 export const CATEGORIES: Category[] = [
   {
-    slug: "genomics",
-    label: "Genomics",
-    description:
-      "Sequencing, genome editing, and the computational tools reshaping our understanding of DNA.",
-    iconName: "Dna",
-    color: "bg-emerald-100",
-    textColor: "text-emerald-800",
-  },
-  {
-    slug: "neuroscience",
-    label: "Neuroscience",
-    description:
-      "Brain-computer interfaces, neural mapping, and the ethics of cognitive enhancement.",
-    iconName: "Brain",
-    color: "bg-purple-100",
-    textColor: "text-purple-800",
-  },
-  {
-    slug: "synthetic-bio",
-    label: "Synthetic Bio",
-    description:
-      "Engineering living systems — from protein design to synthetic genomes and biocomputing.",
-    iconName: "FlaskConical",
-    color: "bg-orange-100",
-    textColor: "text-orange-800",
-  },
-  {
     slug: "ai-research",
     label: "AI Research",
     description:
-      "Foundational AI advances with direct biological applications — from AlphaFold to generative models.",
+      "Foundational AI advances, from AlphaFold to generative models.",
     iconName: "Cpu",
     color: "bg-blue-100",
     textColor: "text-blue-800",
@@ -41,10 +14,28 @@ export const CATEGORIES: Category[] = [
     slug: "ethics",
     label: "Ethics",
     description:
-      "The moral, societal, and policy questions raised by accelerating biological AI.",
+      "The moral, societal, and policy questions raised by accelerating AI.",
     iconName: "Scale",
     color: "bg-rose-100",
     textColor: "text-rose-800",
+  },
+  {
+    slug: "ai-economy",
+    label: "AI in Economy",
+    description:
+      "How AI changes markets, labor, productivity, and economic power.",
+    iconName: "Cpu",
+    color: "bg-amber-100",
+    textColor: "text-amber-800",
+  },
+  {
+    slug: "ai-biology",
+    label: "AI in Biology",
+    description:
+      "AI systems used to understand proteins, cells, disease, and biological research.",
+    iconName: "Cpu",
+    color: "bg-emerald-100",
+    textColor: "text-emerald-800",
   },
 ];
 

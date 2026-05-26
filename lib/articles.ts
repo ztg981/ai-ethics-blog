@@ -72,7 +72,11 @@ export function getFeaturedArticle(): Article | null {
  */
 export function getRelatedArticles(slug: string, category: string, limit = 3): Article[] {
   return getAllArticles()
-    .filter((a) => a.slug !== slug && a.category === category)
+    .filter(
+      (a) =>
+        a.slug !== slug &&
+        (a.category === category || a.additionalCategories?.includes(category as Article["category"]))
+    )
     .slice(0, limit);
 }
 
@@ -91,5 +95,7 @@ export function getAllArticleSlugs(): string[] {
  * Returns articles by category slug, sorted by date descending.
  */
 export function getArticlesByCategory(category: string): Article[] {
-  return getAllArticles().filter((a) => a.category === category);
+  return getAllArticles().filter(
+    (a) => a.category === category || a.additionalCategories?.includes(category as Article["category"])
+  );
 }

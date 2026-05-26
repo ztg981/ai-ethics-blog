@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Article } from "@/types/article";
-import CategoryBadge from "@/components/shared/CategoryBadge";
+import { ArticleCategoryBadges } from "@/components/shared/CategoryBadge";
 
 interface HeroArticleProps {
   article: Article;
@@ -29,8 +29,8 @@ export default function HeroArticle({ article }: HeroArticleProps) {
           </p>
 
           {/* Meta row */}
-          <div className="flex items-center gap-3 mt-auto">
-            <CategoryBadge category={article.category} />
+          <div className="flex flex-wrap items-center gap-3 mt-auto">
+            <ArticleCategoryBadges article={article} />
             <span className="text-border">|</span>
             <span className="font-sans text-label-sm text-subtle">
               By{" "}

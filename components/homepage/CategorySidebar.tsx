@@ -1,11 +1,8 @@
 import Link from "next/link";
-import { Dna, Brain, FlaskConical, Cpu, Scale } from "lucide-react";
+import { Cpu, Scale } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  Dna,
-  Brain,
-  FlaskConical,
   Cpu,
   Scale,
 };

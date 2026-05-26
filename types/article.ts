@@ -1,9 +1,8 @@
 export type CategorySlug =
-  | "genomics"
-  | "neuroscience"
-  | "synthetic-bio"
   | "ai-research"
-  | "ethics";
+  | "ethics"
+  | "ai-economy"
+  | "ai-biology";
 
 export interface AuthorLinks {
   twitter?: string;
@@ -46,6 +45,7 @@ export interface Article {
   publishedAt: string; // ISO 8601 e.g. "2024-03-15"
   updatedAt?: string;
   category: CategorySlug;
+  additionalCategories?: CategorySlug[];
   tags: string[];
   featured: boolean;
   heroImage: ImageMeta;

@@ -2,11 +2,10 @@ import Link from "next/link";
 
 const FOOTER_LINKS = {
   Topics: [
-    { label: "Genomics", href: "/topics/genomics" },
-    { label: "Neuroscience", href: "/topics/neuroscience" },
-    { label: "Synthetic Bio", href: "/topics/synthetic-bio" },
     { label: "AI Research", href: "/topics/ai-research" },
     { label: "Ethics", href: "/topics/ethics" },
+    { label: "AI in Economy", href: "/topics/ai-economy" },
+    { label: "AI in Biology", href: "/topics/ai-biology" },
   ],
   Navigate: [
     { label: "Latest", href: "/" },
@@ -62,9 +61,6 @@ export default function Footer() {
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="font-sans text-label-sm text-subtle">
             &copy; {year} AI Ethics Blog. All rights reserved.
-          </p>
-          <p className="font-sans text-label-sm text-subtle italic">
-            &ldquo;The algorithm is as much a lens as it is a tool.&rdquo;
           </p>
         </div>
       </div>

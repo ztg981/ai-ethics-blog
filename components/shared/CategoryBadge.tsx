@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getCategoryBySlug } from "@/lib/categories";
-import type { CategorySlug } from "@/types/article";
+import type { Article, CategorySlug } from "@/types/article";
 
 interface CategoryBadgeProps {
   category: CategorySlug;
@@ -26,4 +26,22 @@ export default function CategoryBadge({
   }
 
   return <span className={className}>{cat.label}</span>;
+}
+
+export function ArticleCategoryBadges({
+  article,
+  size = "sm",
+}: {
+  article: Article;
+  size?: "sm" | "md";
+}) {
+  const categories = [article.category, ...(article.additionalCategories ?? [])];
+
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      {categories.map((category) => (
+        <CategoryBadge key={category} category={category} size={size} />
+      ))}
+    </div>
+  );
 }

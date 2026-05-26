@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Dna, Brain, FlaskConical, Cpu, Scale } from "lucide-react";
+import { Cpu, Scale } from "lucide-react";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { CATEGORIES } from "@/lib/categories";
 import { getArticlesByCategory } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Topics",
-  description: "Explore articles by topic — Genomics, Neuroscience, Synthetic Bio, AI Research, and Ethics.",
+  description: "Explore articles by topic: AI Research, Ethics, AI in Economy, and AI in Biology.",
 };
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  Dna, Brain, FlaskConical, Cpu, Scale,
+  Cpu,
+  Scale,
 };
 
 export default function TopicsPage() {
@@ -22,7 +23,7 @@ export default function TopicsPage() {
         Browse articles by subject area.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {CATEGORIES.map((cat) => {
           const Icon = ICON_MAP[cat.iconName] ?? Cpu;
           const count = getArticlesByCategory(cat.slug).length;

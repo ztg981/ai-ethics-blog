@@ -21,11 +21,6 @@ export default function NewsletterSignup({ variant = "sidebar" }: NewsletterSign
   if (variant === "inline") {
     return (
       <section className="bg-surface border border-border p-8 text-center">
-        <h2 className="font-serif text-heading-lg text-ink mb-2">The Weekly Abstract</h2>
-        <p className="font-sans text-body-sm text-muted mb-6 max-w-sm mx-auto">
-          Concise summaries of the week&apos;s most critical biological breakthroughs,
-          delivered to your inbox.
-        </p>
         {submitted ? (
           <SuccessMessage />
         ) : (
@@ -43,13 +38,6 @@ export default function NewsletterSignup({ variant = "sidebar" }: NewsletterSign
   // Sidebar variant
   return (
     <div className="border border-border p-5 mt-5">
-      <h2 className="font-serif text-heading-sm text-ink mb-1.5 italic">
-        The Weekly Abstract
-      </h2>
-      <p className="font-sans text-body-sm text-muted mb-4">
-        Concise summaries of the week&apos;s most critical biological breakthroughs,
-        delivered to your inbox.
-      </p>
       {submitted ? (
         <SuccessMessage />
       ) : (

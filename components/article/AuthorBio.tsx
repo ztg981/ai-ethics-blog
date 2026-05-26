@@ -24,7 +24,11 @@ export default function AuthorBio({ author }: AuthorBioProps) {
           <p className="font-serif text-heading-md text-ink font-bold leading-tight">
             {author.name}
           </p>
-          <p className="font-sans text-label-sm text-subtle mt-0.5 mb-3">{author.role}</p>
+          {author.role && (
+            <p className="font-sans text-label-sm text-subtle mt-0.5 mb-3">
+              {author.role}
+            </p>
+          )}
           <p className="font-sans text-body-sm text-muted">{author.bio}</p>
 
           {/* Social links */}

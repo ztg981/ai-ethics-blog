@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Article } from "@/types/article";
-import CategoryBadge from "@/components/shared/CategoryBadge";
+import { ArticleCategoryBadges } from "@/components/shared/CategoryBadge";
 import ReadingTime from "@/components/shared/ReadingTime";
 
 interface ArticleHeaderProps {
@@ -10,31 +10,29 @@ interface ArticleHeaderProps {
 export default function ArticleHeader({ article }: ArticleHeaderProps) {
   return (
     <header className="mb-10">
-      {/* Category + reading time */}
-      <div className="flex items-center gap-3 mb-5">
-        <CategoryBadge category={article.category} size="md" />
+      <div className="flex flex-wrap items-center gap-3 mb-5">
+        <ArticleCategoryBadges article={article} size="md" />
         <ReadingTime minutes={article.readingTime} showIcon />
       </div>
 
-      {/* Title */}
       <h1 className="font-serif text-display-md text-ink leading-tight mb-4 text-balance">
         {article.title}
       </h1>
 
-      {/* Subtitle */}
       <p className="font-serif text-body-lg text-muted italic mb-7 text-pretty">
         {article.subtitle}
       </p>
 
-      {/* Author + date row */}
       <div className="flex items-center gap-4 pb-7 border-b border-border">
         <div>
           <p className="font-sans text-[0.8125rem] text-ink font-semibold leading-tight">
             {article.author.name}
           </p>
-          <p className="font-sans text-label-sm text-subtle leading-tight mt-0.5">
-            {article.author.role}
-          </p>
+          {article.author.role && (
+            <p className="font-sans text-label-sm text-subtle leading-tight mt-0.5">
+              {article.author.role}
+            </p>
+          )}
         </div>
         <div className="w-px h-7 bg-border" />
         <time
@@ -65,7 +63,6 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         )}
       </div>
 
-      {/* Hero image */}
       <div className="mt-8 relative aspect-[16/9] overflow-hidden bg-surface">
         <Image
           src={article.heroImage.src}
