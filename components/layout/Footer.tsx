@@ -16,8 +16,6 @@ const FOOTER_LINKS = {
 };
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="mt-24 border-t border-border bg-surface">
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-14">
@@ -55,13 +53,6 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Bottom bar */}
-        <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="font-sans text-label-sm text-subtle">
-            &copy; {year} AI Ethics Blog. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

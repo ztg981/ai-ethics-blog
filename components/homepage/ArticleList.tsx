@@ -7,11 +7,7 @@ interface ArticleListProps {
 
 export default function ArticleList({ articles }: ArticleListProps) {
   if (articles.length === 0) {
-    return (
-      <p className="font-sans text-body-md text-muted py-10">
-        No articles yet. Check back soon.
-      </p>
-    );
+    return null;
   }
 
   return (
