@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/prose.css";
+
+@layer base {
+  :root {
+    --background: #faf9f7;
+    --foreground: #111111;
+    --border: #e5e3de;
+    --surface: #f5f3ef;
+    --muted: #6b7280;
+    --navy: #1a237e;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--foreground);
+  }
+
+  ::selection {
+    background-color: #c5cae9;
+    color: #111111;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Smooth focus outlines */
+  :focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-navy text-white text-sm font-sans font-medium rounded-b;
+    &:focus {
+      @apply top-0;
+    }
+  }
+
+  /* Thin top divider rule used throughout the design */
+  .rule-top {
+    border-top: 1px solid var(--border);
+  }
+
+  /* Category badge pill — base styles; color variants via Tailwind */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 text-label-sm font-sans font-semibold uppercase tracking-widest rounded-sm;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

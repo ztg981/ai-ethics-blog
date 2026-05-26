@@ -1,0 +1,53 @@
+/*
+  Extended prose styles for article body rendering.
+  Applied alongside the Tailwind typography plugin via `prose-blog` variant.
+*/
+
+/* Ensure headings within prose use the serif font */
+.prose-blog h2,
+.prose-blog h3,
+.prose-blog h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  scroll-margin-top: 5rem; /* Offset for sticky navbar */
+}
+
+/* First paragraph lead style */
+.prose-blog > p:first-of-type {
+  font-size: 1.125rem;
+  color: #374151;
+}
+
+/* Smooth scroll target padding for anchored headings */
+.prose-blog [id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Override default list styling to be more editorial */
+.prose-blog ul > li::marker {
+  color: #9ca3af;
+}
+
+.prose-blog ol > li::marker {
+  color: #9ca3af;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+/* Table styling */
+.prose-blog table {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+}
+
+.prose-blog thead th {
+  background-color: #f5f3ef;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Italic em emphasis in serif */
+.prose-blog em {
+  font-family: var(--font-playfair), Georgia, serif;
+}
