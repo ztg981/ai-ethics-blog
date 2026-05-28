@@ -29,7 +29,7 @@ export default function Footer() {
               AI Ethics Blog
             </Link>
             <p className="mt-3 font-sans text-body-sm text-muted max-w-[22ch]">
-              Independent writing on AI, biology, and the ethics at their intersection.
+              Independent writing on AI, technology, and the intersection of ethics.
             </p>
           </div>
 

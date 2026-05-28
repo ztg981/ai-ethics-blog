@@ -9,7 +9,7 @@ import { getAllArticles, getFeaturedArticle } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "AI Ethics Blog — AI, Biology & Bioethics",
   description:
-    "Independent writing on artificial intelligence, biology, and the ethical questions at their intersection.",
+    "Independent writing on AI, technology, and the intersection of ethics.",
 };
 
 export default function HomePage() {

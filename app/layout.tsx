@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | AI Ethics Blog",
   },
   description:
-    "Independent writing on artificial intelligence, biology, and the ethical questions at their intersection.",
+    "Independent writing on AI, technology, and the intersection of ethics.",
   openGraph: {
     type: "website",
     siteName: "AI Ethics Blog",
