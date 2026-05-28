@@ -15,7 +15,7 @@ export default function HeroArticle({ article }: HeroArticleProps) {
         Featured Research
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 items-start">
+      <div className={article.heroImage ? "grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 items-start" : ""}>
         {/* Text */}
         <div className="flex flex-col">
           <Link href={`/articles/${article.slug}`} className="group">
@@ -51,21 +51,23 @@ export default function HeroArticle({ article }: HeroArticleProps) {
         </div>
 
         {/* Image */}
-        <Link
-          href={`/articles/${article.slug}`}
-          className="block overflow-hidden bg-surface aspect-[16/10] lg:aspect-auto lg:h-[280px] relative"
-          tabIndex={-1}
-          aria-hidden="true"
-        >
-          <Image
-            src={article.heroImage.src}
-            alt={article.heroImage.alt}
-            fill
-            className="object-cover hover:scale-[1.02] transition-transform duration-500"
-            sizes="(max-width: 1024px) 100vw, 420px"
-            priority
-          />
-        </Link>
+        {article.heroImage && (
+          <Link
+            href={`/articles/${article.slug}`}
+            className="block overflow-hidden bg-surface aspect-[16/10] lg:aspect-auto lg:h-[280px] relative"
+            tabIndex={-1}
+            aria-hidden="true"
+          >
+            <Image
+              src={article.heroImage.src}
+              alt={article.heroImage.alt}
+              fill
+              className="object-cover hover:scale-[1.02] transition-transform duration-500"
+              sizes="(max-width: 1024px) 100vw, 420px"
+              priority
+            />
+          </Link>
+        )}
       </div>
     </article>
   );

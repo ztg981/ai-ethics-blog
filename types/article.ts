@@ -48,7 +48,7 @@ export interface Article {
   additionalCategories?: CategorySlug[];
   tags: string[];
   featured: boolean;
-  heroImage: ImageMeta;
+  heroImage?: ImageMeta;
   excerpt: string;
   readingTime: number; // computed — minutes
   tableOfContents: TOCEntry[]; // computed

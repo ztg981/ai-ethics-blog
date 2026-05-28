@@ -8,10 +8,12 @@ interface ArticleHeaderProps {
 }
 
 export default function ArticleHeader({ article }: ArticleHeaderProps) {
+  const isBlogIntro = article.slug === "introduction-to-our-blog";
+
   return (
     <header className="mb-10">
       <div className="flex flex-wrap items-center gap-3 mb-5">
-        <ArticleCategoryBadges article={article} size="md" />
+        {!isBlogIntro && <ArticleCategoryBadges article={article} size="md" />}
         <ReadingTime minutes={article.readingTime} showIcon />
       </div>
 
@@ -63,21 +65,23 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         )}
       </div>
 
-      <div className="mt-8 relative aspect-[16/9] overflow-hidden bg-surface">
-        <Image
-          src={article.heroImage.src}
-          alt={article.heroImage.alt}
-          fill
-          className="object-contain"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 65vw, 800px"
-          priority
-        />
-        {article.heroImage.credit && (
-          <p className="absolute bottom-2 right-3 font-sans text-[0.65rem] text-white/70">
-            {article.heroImage.credit}
-          </p>
-        )}
-      </div>
+      {article.heroImage && (
+        <div className="mt-8 relative aspect-[16/9] overflow-hidden bg-surface">
+          <Image
+            src={article.heroImage.src}
+            alt={article.heroImage.alt}
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 65vw, 800px"
+            priority
+          />
+          {article.heroImage.credit && (
+            <p className="absolute bottom-2 right-3 font-sans text-[0.65rem] text-white/70">
+              {article.heroImage.credit}
+            </p>
+          )}
+        </div>
+      )}
     </header>
   );
 }

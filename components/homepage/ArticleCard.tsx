@@ -9,6 +9,8 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article, variant = "default" }: ArticleCardProps) {
+  const isBlogIntro = article.slug === "introduction-to-our-blog";
+
   if (variant === "compact") {
     return (
       <article className="py-3 border-b border-border last:border-0">
@@ -31,7 +33,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
   return (
     <article className="py-7 border-b border-border last:border-0">
       <div className="flex flex-wrap items-center gap-3 mb-3">
-        <ArticleCategoryBadges article={article} />
+        {!isBlogIntro && <ArticleCategoryBadges article={article} />}
         <ReadingTime minutes={article.readingTime} />
       </div>
 

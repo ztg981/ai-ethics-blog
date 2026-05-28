@@ -48,21 +48,27 @@ export default function SearchArticles({ articles }: SearchArticlesProps) {
       </form>
 
       <div className="space-y-7">
-        {results.map((article) => (
-          <article key={article.slug} className="border-b border-border pb-7 last:border-0">
-            <div className="mb-3">
-              <ArticleCategoryBadges article={article} />
-            </div>
-            <Link href={`/articles/${article.slug}`} className="group">
-              <h2 className="font-serif text-heading-lg text-ink group-hover:text-navy transition-colors">
-                {article.title}
-              </h2>
-            </Link>
-            <p className="mt-2 font-sans text-body-sm text-muted">
-              {article.excerpt}
-            </p>
-          </article>
-        ))}
+        {results.map((article) => {
+          const isBlogIntro = article.slug === "introduction-to-our-blog";
+
+          return (
+            <article key={article.slug} className="border-b border-border pb-7 last:border-0">
+              {!isBlogIntro && (
+                <div className="mb-3">
+                  <ArticleCategoryBadges article={article} />
+                </div>
+              )}
+              <Link href={`/articles/${article.slug}`} className="group">
+                <h2 className="font-serif text-heading-lg text-ink group-hover:text-navy transition-colors">
+                  {article.title}
+                </h2>
+              </Link>
+              <p className="mt-2 font-sans text-body-sm text-muted">
+                {article.excerpt}
+              </p>
+            </article>
+          );
+        })}
       </div>
 
       {results.length === 0 && (

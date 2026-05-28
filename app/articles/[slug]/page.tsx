@@ -27,6 +27,17 @@ export async function generateMetadata({
   if (!result) return {};
 
   const { article } = result;
+  const openGraphImages = article.heroImage
+    ? [
+        {
+          url: article.heroImage.src,
+          width: article.heroImage.width,
+          height: article.heroImage.height,
+          alt: article.heroImage.alt,
+        },
+      ]
+    : undefined;
+
   return {
     title: article.title,
     description: article.excerpt,
@@ -36,14 +47,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: article.publishedAt,
       authors: [article.author.name],
-      images: [
-        {
-          url: article.heroImage.src,
-          width: article.heroImage.width,
-          height: article.heroImage.height,
-          alt: article.heroImage.alt,
-        },
-      ],
+      images: openGraphImages,
     },
   };
 }
@@ -53,6 +57,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   if (!result) notFound();
 
   const { article, content } = result;
+  const isBlogIntro = article.slug === "introduction-to-our-blog";
   const relatedArticles = getRelatedArticles(article.slug, article.category, 2);
   const articleUrl = `https://aiethicsblog.com/articles/${article.slug}`;
 
@@ -74,7 +79,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               </div>
 
               <ShareBar url={articleUrl} title={article.title} />
-              <AuthorBio author={article.author} />
+              {!isBlogIntro && <AuthorBio author={article.author} />}
               <RelatedArticles articles={relatedArticles} />
             </article>
           }
