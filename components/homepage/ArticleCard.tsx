@@ -47,18 +47,20 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
         {article.excerpt}
       </p>
 
-      <p className="font-sans text-label-sm text-subtle">
-        By{" "}
-        <span className="font-semibold text-muted">{article.author.name}</span>
-        {" · "}
-        <time dateTime={article.publishedAt}>
-          {new Date(article.publishedAt).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </time>
-      </p>
+      {!isBlogIntro && (
+        <p className="font-sans text-label-sm text-subtle">
+          By{" "}
+          <span className="font-semibold text-muted">{article.author.name}</span>
+          {" · "}
+          <time dateTime={article.publishedAt}>
+            {new Date(article.publishedAt).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </time>
+        </p>
+      )}
     </article>
   );
 }
