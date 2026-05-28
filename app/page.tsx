@@ -4,7 +4,6 @@ import TwoColumnLayout from "@/components/layout/TwoColumnLayout";
 import HeroArticle from "@/components/homepage/HeroArticle";
 import ArticleList from "@/components/homepage/ArticleList";
 import CategorySidebar from "@/components/homepage/CategorySidebar";
-import NewsletterSignup from "@/components/homepage/NewsletterSignup";
 import { getAllArticles, getFeaturedArticle } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -33,7 +32,6 @@ export default function HomePage() {
           sidebar={
             <div className="space-y-0">
               <CategorySidebar />
-              <NewsletterSignup variant="sidebar" />
             </div>
           }
         />
