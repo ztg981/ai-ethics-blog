@@ -25,45 +25,47 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         {article.subtitle}
       </p>
 
-      <div className="flex items-center gap-4 pb-7 border-b border-border">
-        <div>
-          <p className="font-sans text-[0.8125rem] text-ink font-semibold leading-tight">
-            {article.author.name}
-          </p>
-          {article.author.role && (
-            <p className="font-sans text-label-sm text-subtle leading-tight mt-0.5">
-              {article.author.role}
+      {!isBlogIntro && (
+        <div className="flex items-center gap-4 pb-7 border-b border-border">
+          <div>
+            <p className="font-sans text-[0.8125rem] text-ink font-semibold leading-tight">
+              {article.author.name}
             </p>
+            {article.author.role && (
+              <p className="font-sans text-label-sm text-subtle leading-tight mt-0.5">
+                {article.author.role}
+              </p>
+            )}
+          </div>
+          <div className="w-px h-7 bg-border" />
+          <time
+            dateTime={article.publishedAt}
+            className="font-sans text-label-sm text-subtle"
+          >
+            {new Date(article.publishedAt).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </time>
+          {article.updatedAt && (
+            <>
+              <span className="font-sans text-label-sm text-subtle">·</span>
+              <time
+                dateTime={article.updatedAt}
+                className="font-sans text-label-sm text-subtle"
+              >
+                Updated{" "}
+                {new Date(article.updatedAt).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+            </>
           )}
         </div>
-        <div className="w-px h-7 bg-border" />
-        <time
-          dateTime={article.publishedAt}
-          className="font-sans text-label-sm text-subtle"
-        >
-          {new Date(article.publishedAt).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </time>
-        {article.updatedAt && (
-          <>
-            <span className="font-sans text-label-sm text-subtle">·</span>
-            <time
-              dateTime={article.updatedAt}
-              className="font-sans text-label-sm text-subtle"
-            >
-              Updated{" "}
-              {new Date(article.updatedAt).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </time>
-          </>
-        )}
-      </div>
+      )}
 
       {article.heroImage && (
         <div className="mt-8 relative aspect-[16/9] overflow-hidden bg-surface">
